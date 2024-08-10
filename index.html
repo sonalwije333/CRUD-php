@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Form</title>
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+
+        body {
+           background-image: url('assets/pic1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #card{
+          
+           background: transparent;
+        }
+    </style>
+</head>
+
+<body class="  flex items-center justify-center min-h-screen  "  >
+
+    <div class="w-full max-w-sm p-11 bg-white rounded-lg shadow-md  " id="card">
+        <h2 class="mb-6 text-3xl font-bold text-center text-gray-100 font-mono ">Login</h2>
+        <form >
+
+            <!-- Email -->
+            <div class="mb-4  font-mono">
+                <label for="email" class="text-sm font-semibold text-gray-700  "></label>
+                <input id="email" name="email" type="email" autocomplete="email" required
+                    class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    placeholder="Email address">
+                    
+               
+            </div>
+              <!-- Password -->
+            <div class="mb-6  font-mono">
+                <label for="password" class="text-sm font-semibold text-gray-700"></label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required
+                    class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm "
+                    placeholder="Password">
+                  
+            </div>
+               <!-- submit button -->
+            <button type="submit  font-mono  "
+            class="w-full px-4 py-2 text-sm font-medium text-white bg-gradient from-indigo-600 border border-transparent rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Sign In</button>
+                
+            <p class="mt-4 text-sm text-center text-gray-100 ">Don't have an account? <a href="#"
+                    class="text-blue-600 hover:underline">Sign up</a></p>
+        </form>
+    </div>
+
+</body>
+
+</html>
