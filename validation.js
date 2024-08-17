@@ -81,6 +81,6 @@ const validateForm = formSelector => {
     });
 };
 
-validateForm('#LoginForm');
+validateForm('#ValidationForm');
 
 
