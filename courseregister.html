@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Registration Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
             background-image: url('assets/pic1.jpg');
@@ -15,33 +16,26 @@
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen font-mono">
-    <div class="bg-white bg-opacity-80 rounded-lg shadow-lg w-full max-w-xl p-8">
+    <div class="bg-white bg-opacity-80 rounded-lg shadow-lg w-full max-w-sm p-8">
         <h2 class="text-center mb-8 text-3xl font-bold text-gray-800">Course Registration</h2>
         <form action="#" method="post" id="CourseRegistrationForm" class="space-y-6">
-            
+            <!-- Select Course Category -->
+            <div>
+                <label for="course-category" class="block text-sm font-medium text-gray-700">Course Category</label>
+                <select id="course-category" name="course-category" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option selected>Select Course Category</option>
+                    <option value="it">Information Technology</option>
+                    <option value="bio">Biology</option>
+                </select>
+            </div>
 
             <!-- Select Course -->
             <div>
-                <label for="course" class="block text-sm font-medium text-gray-700">Course Category</label>
-                <select id="course" name="course" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option selected>Choose Course Category</option>
-                    <option value="course1">Information Technology</option>
-                    <option value="course2">Biology</option>
-                    
-                </select>
-            </div>
-
-            
-            <!--  Course -->
-            <div>
                 <label for="course" class="block text-sm font-medium text-gray-700">Course</label>
                 <select id="course" name="course" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option selected>Choose Course</option>
+                    <option selected>Select Course</option>
                 </select>
             </div>
-
-            
-
 
             <!-- Submit Button -->
             <div>
@@ -55,88 +49,29 @@
         </form>
     </div>
 
+    <!-- jQuery Script to dynamically change courses -->
     <script>
+        $(document).ready(function() {
+            $('#course-category').change(function() {
+                var category = $(this).val();
+                var courses = [];
 
-        var stateList = [
-        { course1: 'Information Technology', course: 'Software Engineering' },
-      { Country: 'India', State: 'Delhi' },
-      { Country: 'India', State: 'Punjab' },
-      { Country: 'Us', State: 'Alabama' },
-      { Country: 'Us', State: 'Arizona' },
-      { Country: 'Us', State: 'California' },
-      { Country: 'Other', State: 'Other' }
-    ];
+                if (category === 'it') {
+                    courses = ['Web Development', 'Data Science', 'Cyber Security'];
+                } else if (category === 'bio') {
+                    courses = ['Molecular Biology', 'Genetics', 'Microbiology'];
+                }
 
-    
-        var cityList = [
-          { State: 'Maharashtra', city: 'Pune' },
-          { State: 'Maharashtra', city: 'Mumbai' },
-          { State: 'Maharashtra', city: 'Hydrabad' },
-          { State: 'Delhi', city: 'New Delhi' },
-          { State: 'Delhi', city: 'Balijt Vihar' },
-          { State: 'Punjab', city: 'Ludhiyana' },
-          { State: 'Punjab', city: 'Amritsar' },
-          { State: 'Punjab', city: 'Patiyala' },
-          { State: 'Punjab', city: 'Jalandhar' },
-          { State: 'Alabama', city: 'Abbeville' },
-          { State: 'Alabama', city: 'Adamsville' },
-          { State: 'Arizona', city: 'Phoenix' },
-          { State: 'Arizona', city: 'Tucson' },
-          { State: 'Other', city: 'Other' }
-        ];
-        $(document).ready(function () {
-          debugger;
-          $(".divOtherCountry").hide();
-          $(".divOtherState").hide();
-          $(".divOtherCity").hide();
-          $("#dpdlCountry").change(function () {
-            debugger;
-            if ($("#dpdlCountry").val() == "Other") {
-              $(".divOtherCountry").show();
-              const option = "<option val='Other'>Other</option>";
-              $("#dpdlState").append(option);
-            } else {
-              $(".divOtherCountry").hide();
-              $(".divOtherState").hide();
-              $(".divOtherCity").hide();
-              $("#dpdlState").html("<option selected>Choose State</option>");
-              $("#dpdlCity").html("<option selected>Choose City</option>");
-              const states = stateList.filter(m => m.Country == $("#dpdlCountry").val() || m.Country == "Other");
-              states.forEach(element => {
-                const option = "<option val='" + element.State + "'>" + element.State + "</option>";
-                $("#dpdlState").append(option);
-              });
-            }
-          });
-    
-          $("#dpdlState").change(function () {
-            debugger;
-            if ($("#dpdlState").val() == "Other") {
-              $(".divOtherState").show();
-              const option = "<option val='Other'>Other</option>";
-              $("#dpdlCity").append(option);
-            } else {
-              $(".divOtherState").hide();
-              $(".divOtherCity").hide();
-              $("#dpdlCity").html("<option selected>Choose City</option>");
-              debugger;
-              const states = cityList.filter(m => m.State == $("#dpdlState").val() || m.State == "Other");
-              states.forEach(element => {
-                const option = "<option val='" + element.city + "'>" + element.city + "</option>";
-                $("#dpdlCity").append(option);
-              });
-            }
-          });
-    
-          $("#dpdlCity").change(function () {
-            debugger;
-            if ($("#dpdlCity").val() == "Other") {
-              $(".divOtherCity").show();
-            } else {
-              $(".divOtherCity").hide();
-            }
-          });
+                var courseDropdown = $('#course');
+                courseDropdown.empty(); // Clear the current options
+                courseDropdown.append('<option selected>Select Course</option>');
+
+                // Append new options
+                $.each(courses, function(index, value) {
+                    courseDropdown.append('<option value="' + value.toLowerCase().replace(/\s+/g, '-') + '">' + value + '</option>');
+                });
+            });
         });
-      </script>
+    </script>
 </body>
 </html>
