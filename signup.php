@@ -18,15 +18,15 @@
     <div class="bg-white bg-opacity-80 rounded-lg shadow-lg w-full max-w-xl p-8">
         <h2 class="text-center mb-8 text-3xl font-bold text-gray-800">Welcome Back</h2>
         <form action="#" method="post" id="ValidationForm" class="space-y-6">
-            <!-- Applicant's Name -->
-            <div class="flex space-x-4">
+           <!-- Applicant's Name -->
+  <div class="flex space-x-4">
                 <div class="w-1/2">
                     <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input type="text" id="f-name" name="f-name" placeholder="First Name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div class="w-1/2">
                     <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
-                    <input type="text" id="last-name" name="last-name" placeholder="Last Name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input type="text" id="l-name" name="l-name" placeholder="Last Name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
             </div>
 
@@ -71,16 +71,24 @@
 
             <!-- Submit Button -->
             <div>
-               <a href="courseregister.html">
-                <button type="submit"  class= "w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Submit</button>
-            </a>
+              
+                <button id="navigateButton" type="submit"  class= "w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Submit</button>
+         
             </div>
 
             <!-- Link to Sign In -->
             <div class="text-center mt-4">
-                <a href="login.html" class="text-blue-600 hover:underline text-sm">Already have an account? Sign in</a>
+                <a href="login.php" class="text-blue-600 hover:underline text-sm">Already have an account? Sign in</a>
             </div>
         </form>
     </div>
+    <script>
+        document.getElementById('navigateButton').onclick = function(event) {
+            event.preventDefault(); 
+            console.log('Button clicked, navigating to Page 2');
+            window.location.href = 'courseregister.php'; 
+        }
+    </script>
+
 </body>
 </html>

@@ -24,6 +24,7 @@
         <h2 class="mb-6 text-3xl font-bold text-center text-gray-800">Welcome</h2>
         
         <form id="ValidationForm">
+            
             <!-- Email -->
             <div class="mb-4">
                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
@@ -48,7 +49,7 @@
                 Sign In
             </button>
                 
-            <p class="mt-4 text-sm text-center text-gray-700">Don't have an account? <a href="signup.html"
+            <p class="mt-4 text-sm text-center text-gray-700">Don't have an account? <a href="signup.php"
                     class="text-indigo-600 hover:underline">Sign up</a></p>
         </form>
     </div>

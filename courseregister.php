@@ -44,7 +44,7 @@
 
             <!-- Link to Sign In -->
             <div class="text-center mt-4">
-                <a href="login.html" class="text-blue-600 hover:underline text-sm">Already have an account? Sign in</a>
+                <a href="login.php" class="text-blue-600 hover:underline text-sm">Already have an account? Sign in</a>
             </div>
         </form>
     </div>
