@@ -21,8 +21,8 @@
         <form action="#" method="post" id="CourseRegistrationForm" class="space-y-6">
             <!-- Select Course Category -->
             <div>
-                <label for="course-category" class="block text-sm font-medium text-gray-700">Course Category</label>
-                <select id="course-category" name="course-category" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <label for="coursecategory" class="block text-sm font-medium text-gray-700">Course Category</label>
+                <select id="coursecategory" name="coursecategory" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option selected>Select Course Category</option>
                     <option value="it">Information Technology</option>
                     <option value="bio">Biology</option>
@@ -52,7 +52,7 @@
     <!-- jQuery Script to dynamically change courses -->
     <script>
         $(document).ready(function() {
-            $('#course-category').change(function() {
+            $('#coursecategory').change(function() {  // Corrected the ID here
                 var category = $(this).val();
                 var courses = [];
 

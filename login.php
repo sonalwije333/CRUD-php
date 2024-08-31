@@ -23,7 +23,7 @@
     <div class="w-full max-w-sm p-8 bg-white bg-opacity-70 rounded-lg shadow-lg" id="card">
         <h2 class="mb-6 text-3xl font-bold text-center text-gray-800">Welcome</h2>
         
-        <form id="ValidationForm">
+        <form id="ValidationForm" action="includes/logininc.php">
             
             <!-- Email -->
             <div class="mb-4">

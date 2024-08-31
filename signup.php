@@ -17,16 +17,16 @@
 <body class="flex items-center justify-center min-h-screen font-mono">
     <div class="bg-white bg-opacity-80 rounded-lg shadow-lg w-full max-w-xl p-8">
         <h2 class="text-center mb-8 text-3xl font-bold text-gray-800">Welcome Back</h2>
-        <form action="#" method="post" id="ValidationForm" class="space-y-6">
+        <form action="includes/signupinc.php" method="post" id="ValidationForm" class="space-y-6">
            <!-- Applicant's Name -->
   <div class="flex space-x-4">
                 <div class="w-1/2">
                     <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
-                    <input type="text" id="f-name" name="f-name" placeholder="First Name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input type="text" id="fname" name="fname" placeholder="First Name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
                 <div class="w-1/2">
                     <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
-                    <input type="text" id="l-name" name="l-name" placeholder="Last Name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <input type="text" id="lname" name="lname" placeholder="Last Name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
             </div>
 
@@ -82,6 +82,8 @@
             </div>
         </form>
     </div>
+
+
     <script>
         document.getElementById('navigateButton').onclick = function(event) {
             event.preventDefault(); 
@@ -89,6 +91,14 @@
             window.location.href = 'courseregister.php'; 
         }
     </script>
+<?php
 
+
+
+
+
+
+
+?>
 </body>
 </html>
